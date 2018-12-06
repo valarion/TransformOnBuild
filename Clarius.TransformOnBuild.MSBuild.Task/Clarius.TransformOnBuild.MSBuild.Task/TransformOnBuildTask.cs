@@ -155,7 +155,8 @@ namespace Clarius.TransformOnBuild.MSBuild.Task
                 $@"{_commonProgramFiles}\Microsoft Shared\TextTemplating\13.0\TextTransform.exe",
                 $@"{_commonProgramFiles}\Microsoft Shared\TextTemplating\12.0\TextTransform.exe",
                 $@"{_commonProgramFiles}\Microsoft Shared\TextTemplating\11.0\TextTransform.exe",
-                $@"{_commonProgramFiles}\Microsoft Shared\TextTemplating\10.0\TextTransform.exe"
+                $@"{_commonProgramFiles}\Microsoft Shared\TextTemplating\10.0\TextTransform.exe",
+                "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/MonoDevelop.TextTemplating/TextTransform.exe",
             };
 
             foreach (var textTransformPathCandiate in textTransformPathCandiates)
