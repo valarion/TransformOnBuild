@@ -22,7 +22,7 @@
   </PropertyGroup>
   <Target
     Name="CopyTaskAssemblyToTempFolder"
-    BeforeTargets="BeforeBuild">
+    BeforeTargets="RunContentBuilder">
     <Copy
       SourceFiles="$(MSBuildThisFileDirectory)Clarius.TransformOnBuild.MSBuild.Task.dll"
       DestinationFolder="$(TempFolder)"
@@ -34,7 +34,8 @@
   />
   <Target
     Name="TransformOnBuild"
-    AfterTargets="BeforeBuild">
+    BeforeTargets="RunContentBuilder"
+    DependsOnTargets="CopyTaskAssemblyToTempFolder">
     <MSBuild
       Projects="$(MSBuildProjectFile)"
       Targets="ResolveReferences;_CopyFilesMarkedCopyLocal"
